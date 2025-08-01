@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy</title>
+    <link rel="stylesheet" href="pharmacy.css">
+    
+</head>
+
+<body>
+
+    <img src="866a5b8ad8fecc5d45e50fa5efccee1e.jpg" alt="logo" class="logo">
+
+    <h1>welcome in our pharmacy</h1>
+    <p>
+        pharmaceutical services in accordance with the highest standards of safety and health,
+        ensuring the availability of officially approved medications and medical supplies to meet patients’ needs
+        and enhance the overall level of community healthcare.
+    </p>
+
+    <p>من فضلك اختر نوع المستخدم:</p>
+    <button class="user-type-btn" onclick="showSection('student')">طالب</button>
+    <button class="user-type-btn" onclick="showSection('patient')">مريض</button>
+    <button class="user-type-btn" onclick="showSection('pharmacy')">صيدلية</button>
+    <button class="user-type-btn" onclick="showSection('company')">شركة أدوية</button>
+
+    
+    <div id="student" class="section">
+        <h2>تسجيل الطالب</h2>
+        <form>
+            <label>اختر مكان التدريب:</label>
+            <select id="trainingPlace">
+                <option value="">-- اختر المكان --</option>
+                <option value="مستشفى الجامعة">مستشفى الجامعة</option>
+                <option value="صيدلية الشفاء">صيدلية الشفاء</option>
+                <option value="صيدلية د/ محمد">صيدلية د/ محمد</option>
+                <option value="شركة فاركو">شركة فاركو</option>
+            </select>
+
+            <label>اختر أقرب موقع لك:</label>
+            <select id="nearestLocation">
+                <option value="">-- اختر الموقع --</option>
+                <option value="أسيوط">أسيوط</option>
+                <option value="القاهرة">القاهرة</option>
+                <option value="الإسكندرية">الإسكندرية</option>
+                <option value="سوهاج">سوهاج</option>
+            </select>
+
+            <button type="button" class="submit-btn" onclick="submitTraining()">تأكيد التسجيل</button>
+        </form>
+        <p id="confirmationMessage"></p>
+    </div>
+
+    
+    <div id="patient" class="section">
+        <h2>طلب دواء</h2>
+        <form id="patient-form">
+            <label for="medicine">اسم الدواء:</label><br>
+            <input type="text" id="medicine" name="medicine" required><br><br>
+
+            <label for="location">اختر أقرب موقع:</label><br>
+            <select id="location" name="location" required>
+                <option value="">-- اختر الموقع --</option>
+                <option value="الاسكندرية">الاسكندرية</option>
+                <option value=" الجيزة">الجيزة</option>
+                <option value="القاهرة">لقاهرة</option>
+                <option value="اسيوط"> اسيوط</option>
+            </select><br><br>
+
+            <button type="submit" class="submit-btn">إرسال الطلب</button>
+        </form>
+        <p id="patientMessage"></p>
+    </div>
+
+    
+    <div id="pharmacy" class="section">
+        <h2>تسجيل صيدلية</h2>
+        <form id="pharmacy-form">
+            <label for="pharmacyName">اسم الصيدلية:</label><br>
+            <input type="text" id="pharmacyName" name="pharmacyName" required><br><br>
+
+            <label for="phone">رقم الموبايل:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="service">نوع الخدمة:</label><br>
+            <select id="service" name="service" required>
+                <option value="">-- اختر الخدمة --</option>
+                <option value="توفير أدوية">توفير أدوية</option>
+                <option value="تبديل ادوية">تبديل ادوية</option>
+                <option value="استقبال طلبات مرضى">استقبال طلبات مرضى</option>
+                <option value="شراكة مع شركة أدوية">شراكة مع شركة أدوية</option>
+            </select><br><br>
+
+            <button type="submit" class="submit-btn">تسجيل</button>
+        </form>
+        <p id="pharmacyMessage"></p>
+    </div>
+
+    
+    <div id="company" class="section">
+        <h2>تسجيل شركة أدوية</h2>
+        <form id="company-form">
+            <label for="companyName">اسم الشركة:</label>
+            <input type="text" id="companyName" name="companyName" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phoneNumber">رقم التواصل:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="partnership">نوع التعاون المطلوب:</label>
+            <select id="partnership" name="partnership" required>
+                <option value="">-- اختر نوع التعاون --</option>
+                <option value="توريد أدوية">توريد أدوية</option>
+                <option value="تدريب طلاب">تدريب طلاب</option>
+                <option value="إعلان عن منتجات">إعلان عن منتجات</option>
+            </select>
+
+            <button type="submit" class="submit-btn">إرسال</button>
+        </form>
+        <p id="company-message" class="success-msg"></p>
+    </div>
+<script defer src="pharmacy.js"></script>
+</body>
+
+</html>
+
+
